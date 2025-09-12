@@ -1,8 +1,10 @@
 
 
-# Node.js REST Server v4.0.0
+
+# Node.js REST Server v5.0.0
 
 Este proyecto es una base para crear servidores RESTful con Node.js, Express y MongoDB (Mongoose). Incluye autenticación JWT, validación de roles, middlewares personalizados y conexión a MongoDB Atlas.
+
 
 
 
@@ -12,6 +14,9 @@ Este proyecto es una base para crear servidores RESTful con Node.js, Express y M
 - Autenticación con JWT
 - Validación de roles y permisos
 - Google Sign-In (autenticación con cuenta de Google)
+- Creación, listado, actualización y borrado de categorías
+- Creación, listado, actualización y borrado de productos
+- Motor de búsqueda en colecciones (usuarios, categorías, productos)
 - Uso de variables de entorno con `dotenv`
 - Conexión a MongoDB Atlas con Mongoose
 - Validaciones con express-validator
@@ -74,12 +79,22 @@ node index.js
 
 
 
+
 ## Endpoints de ejemplo
 
 - `GET /api/users` — Listar usuarios
 - `POST /api/users` — Crear usuario
 - `PUT /api/users/:id` — Actualizar usuario
 - `DELETE /api/users/:id` — Borrar usuario (requiere admin rol)
+- `GET /api/categories` — Listar categorías
+- `POST /api/categories` — Crear categoría
+- `PUT /api/categories/:id` — Actualizar categoría
+- `DELETE /api/categories/:id` — Borrar categoría (requiere admin rol)
+- `GET /api/products` — Listar productos
+- `POST /api/products` — Crear producto
+- `PUT /api/products/:id` — Actualizar producto
+- `DELETE /api/products/:id` — Borrar producto (requiere admin rol)
+- `GET /api/search/:collection/:term` — Buscar en colecciones (usuarios, categorías, productos, roles)
 - `POST /api/auth/login` — Login tradicional (email/password)
 - `POST /api/auth/google` — Login/registro con Google
 
