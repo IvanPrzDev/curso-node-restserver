@@ -1,7 +1,9 @@
 
 
 
-# Node.js REST Server v5.0.0
+# Node.js REST Server v6.0.0 - Cloudinary functionality
+
+# Se ha añadido la funcion de subida de imágenes a CLOUDINARY. Se recomienda configurar su propio .env. Puede tomar de ejemplo .example.env
 
 Este proyecto es una base para crear servidores RESTful con Node.js, Express y MongoDB (Mongoose). Incluye autenticación JWT, validación de roles, middlewares personalizados y conexión a MongoDB Atlas.
 
@@ -89,7 +91,7 @@ node index.js
 ├── package.json
 └── README.md
 ```
-## Manejo de imágenes y archivos
+## Manejo de imágenes y archivos en local
 
 - Las imágenes subidas por usuarios y productos se almacenan en la carpeta `uploads/`.
 - Si un usuario o producto no tiene imagen, se muestra la imagen por defecto ubicada en `assets/no-image.jpg`.
@@ -125,6 +127,10 @@ uploads/users/*
 - `GET /api/search/:collection/:term` — Buscar en colecciones (usuarios, categorías, productos, roles)
 - `POST /api/auth/login` — Login tradicional (email/password)
 - `POST /api/auth/google` — Login/registro con Google
+
+# Documentación POSTMAN - ENDPOINTS
+
+https://ivanprzdev-4354039.postman.co/workspace/Iv%C3%A1n's-Workspace~a264dd15-f9be-484a-865e-1707f3e6a60f/collection/47454508-8b753292-ce53-43c5-8ab6-1cf30796ad5d?action=share&creator=47454508&active-environment=47454508-92706c9c-6d73-4871-b592-0a4bfb197d7f
 
 
 ## Personalización
