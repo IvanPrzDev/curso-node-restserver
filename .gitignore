@@ -1,2 +1,12 @@
 node_modules/
 .env
+
+# Ignorar archivos subidos, pero mantener carpetas y documentación
+uploads/products/*
+uploads/users/*
+!uploads/products/.gitkeep
+!uploads/products/README.md
+!uploads/users/.gitkeep
+!uploads/users/README.md
+
+

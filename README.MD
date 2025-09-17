@@ -17,6 +17,10 @@ Este proyecto es una base para crear servidores RESTful con Node.js, Express y M
 - Creación, listado, actualización y borrado de categorías
 - Creación, listado, actualización y borrado de productos
 - Motor de búsqueda en colecciones (usuarios, categorías, productos)
+- Subida y gestión de imágenes de usuarios y productos
+- Carpeta `assets/` para imágenes por defecto (por ejemplo, `no-image.jpg`)
+- Carpeta `uploads/` para almacenamiento local de imágenes subidas (con subcarpetas `products/` y `users/`)
+- Manejo profesional de archivos ignorados en `.gitignore` (solo se suben archivos de estructura y documentación, no imágenes)
 - Uso de variables de entorno con `dotenv`
 - Conexión a MongoDB Atlas con Mongoose
 - Validaciones con express-validator
@@ -72,9 +76,33 @@ node index.js
 ├── middlewares/
 ├── helpers/
 ├── public/
+├── assets/
+│   └── no-image.jpg
+├── uploads/
+│   ├── products/
+│   │   ├── .gitkeep
+│   │   └── README.md
+│   └── users/
+│       ├── .gitkeep
+│       └── README.md
 ├── .env
 ├── package.json
 └── README.md
+```
+## Manejo de imágenes y archivos
+
+- Las imágenes subidas por usuarios y productos se almacenan en la carpeta `uploads/`.
+- Si un usuario o producto no tiene imagen, se muestra la imagen por defecto ubicada en `assets/no-image.jpg`.
+- El contenido de `uploads/products` y `uploads/users` está ignorado en el repositorio, pero se mantienen las carpetas y documentación mediante archivos `.gitkeep` y `README.md`.
+
+Ejemplo de `.gitignore` para uploads:
+```gitignore
+uploads/products/*
+uploads/users/*
+!uploads/products/.gitkeep
+!uploads/products/README.md
+!uploads/users/.gitkeep
+!uploads/users/README.md
 ```
 
 
