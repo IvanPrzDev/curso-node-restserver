@@ -31,6 +31,9 @@ class Server {
 
     // Routes
     this.routes();
+
+    // Initialize jobs/cronjobs
+    this.initializeJobs();
   }
 
   async connectDB() {
@@ -63,6 +66,12 @@ class Server {
     this.app.use(this.paths.products, require('../routes/products'));
     this.app.use(this.paths.search, require('../routes/search'));
     this.app.use(this.paths.uploads, require('../routes/uploads'));
+  }
+
+  initializeJobs() {
+    // Import and start cronjobs
+    require('../jobs');
+    console.log('🤖 Background jobs initialized');
   }
 
   listen() {
